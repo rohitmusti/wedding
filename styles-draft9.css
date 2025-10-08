@@ -47,6 +47,101 @@ body {
     border: 3px double var(--terracotta);
 }
 
+/* Embroidery-style decorative border */
+.vintage-card::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 12px;
+    pointer-events: none;
+    background-image:
+        /* Top edge embroidery */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 8px,
+            var(--terracotta) 8px,
+            var(--terracotta) 9px,
+            transparent 9px,
+            transparent 12px,
+            var(--saffron) 12px,
+            var(--saffron) 13px,
+            transparent 13px,
+            transparent 20px
+        ),
+        /* Bottom edge embroidery */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 8px,
+            var(--terracotta) 8px,
+            var(--terracotta) 9px,
+            transparent 9px,
+            transparent 12px,
+            var(--saffron) 12px,
+            var(--saffron) 13px,
+            transparent 13px,
+            transparent 20px
+        ),
+        /* Left edge embroidery */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 8px,
+            var(--terracotta) 8px,
+            var(--terracotta) 9px,
+            transparent 9px,
+            transparent 12px,
+            var(--saffron) 12px,
+            var(--saffron) 13px,
+            transparent 13px,
+            transparent 20px
+        ),
+        /* Right edge embroidery */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 8px,
+            var(--terracotta) 8px,
+            var(--terracotta) 9px,
+            transparent 9px,
+            transparent 12px,
+            var(--saffron) 12px,
+            var(--saffron) 13px,
+            transparent 13px,
+            transparent 20px
+        );
+    background-size:
+        100% 4px,
+        100% 4px,
+        4px 100%,
+        4px 100%;
+    background-position:
+        left top,
+        left bottom,
+        left top,
+        right top;
+    background-repeat:
+        repeat-x,
+        repeat-x,
+        repeat-y,
+        repeat-y;
+    box-shadow:
+        inset 0 0 0 1px var(--gold),
+        inset 15px 15px 0 -13px var(--terracotta),
+        inset -15px 15px 0 -13px var(--terracotta),
+        inset 15px -15px 0 -13px var(--terracotta),
+        inset -15px -15px 0 -13px var(--terracotta),
+        inset 18px 18px 0 -16px var(--saffron),
+        inset -18px 18px 0 -16px var(--saffron),
+        inset 18px -18px 0 -16px var(--saffron),
+        inset -18px -18px 0 -16px var(--saffron);
+    z-index: 1;
+}
+
 /* Aged paper texture with subtle Indian pattern */
 .vintage-card::before {
     content: '';
@@ -72,6 +167,13 @@ body {
         );
     pointer-events: none;
     border-radius: 15px;
+    z-index: 0;
+}
+
+/* Ensure content appears above decorative elements */
+.vintage-card > * {
+    position: relative;
+    z-index: 2;
 }
 
 /* Decorative corner elements with Indian-inspired patterns */
@@ -80,6 +182,7 @@ body {
     width: 50px;
     height: 50px;
     opacity: 0.7;
+    z-index: 3;
 }
 
 .corner-decoration::before,
@@ -353,6 +456,13 @@ body {
         padding: 45px 40px;
     }
 
+    .vintage-card::after {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+    }
+
     .main-title h1 {
         font-size: 1.7rem;
         letter-spacing: 2px;
@@ -393,6 +503,28 @@ body {
         padding: 40px 30px;
         border-radius: 12px;
         border-width: 2px;
+    }
+
+    .vintage-card::after {
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
+        background-size:
+            100% 3px,
+            100% 3px,
+            3px 100%,
+            3px 100%;
+        box-shadow:
+            inset 0 0 0 1px var(--gold),
+            inset 12px 12px 0 -11px var(--terracotta),
+            inset -12px 12px 0 -11px var(--terracotta),
+            inset 12px -12px 0 -11px var(--terracotta),
+            inset -12px -12px 0 -11px var(--terracotta),
+            inset 15px 15px 0 -13px var(--saffron),
+            inset -15px 15px 0 -13px var(--saffron),
+            inset 15px -15px 0 -13px var(--saffron),
+            inset -15px -15px 0 -13px var(--saffron);
     }
 
     .main-title h1 {
