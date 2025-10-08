@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Website Drafts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #F0E5D1 0%, #E8DCC4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #3D3229;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6B5D52;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .drafts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .draft-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .draft-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .draft-number {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #C97D60;
+            line-height: 1;
+        }
+
+        .draft-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3D3229;
+            margin-bottom: 10px;
+        }
+
+        .draft-description {
+            font-size: 0.95rem;
+            color: #6B5D52;
+            line-height: 1.6;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #C97D60;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-top: auto;
+            transition: background 0.3s ease;
+        }
+
+        .view-button:hover {
+            background: #A65D47;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .drafts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .draft-card {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wedding Website Drafts</h1>
+        <p class="subtitle">Choose a design to preview</p>
+
+        <div class="drafts-grid">
+            <a href="draft1.html" class="draft-card">
+                <div class="draft-number">01</div>
+                <div class="draft-title">Vintage Elegance</div>
+                <div class="draft-description">
+                    Classic serif typography with warm terracotta tones. Soft, romantic, and timeless with decorative corner details.
+                </div>
+                <span class="view-button">View Draft</span>
+            </a>
+
+            <a href="draft2.html" class="draft-card">
+                <div class="draft-number">02</div>
+                <div class="draft-title">Architectural Film</div>
+                <div class="draft-description">
+                    Bold coral with monospace fonts. Clean geometric layout with film-style drop shadow and written-out details.
+                </div>
+                <span class="view-button">View Draft</span>
+            </a>
+
+            <a href="draft3.html" class="draft-card">
+                <div class="draft-number">03</div>
+                <div class="draft-title">Gen Z Glam</div>
+                <div class="draft-description">
+                    Neon gradients, animated sparkles, and holographic text. Dark cosmic background with electric purple and hot pink vibes.
+                </div>
+                <span class="view-button">View Draft</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
